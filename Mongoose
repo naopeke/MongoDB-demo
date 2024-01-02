@@ -1,0 +1,12 @@
+node.jsからMongoDBにアクセス
+```
+npm install mongodb
+```
+Mongoose（ODM（Object Data Modeling)  
+https://dev.to/elhamnajeebullah/mongoose-odm-best-practices-part-one-e6e  
+```
+npm i mongoose
+```
+```
+npm i mongoose@5
+```
