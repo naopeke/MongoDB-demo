@@ -1,5 +1,5 @@
 # MongoDB CRUB Operations
-[Insert Documents](#insertdocuments) | [Find Documents](#finddocuments) | [Update Documents](#updatedocuments) | [Delete Documents](#deletedocuments)
+[Insert Documents](#insertdocuments) | [Find Documents](#finddocuments) | [Update Documents](#updatedocuments) | [Delete Documents](#deletedocuments)　| [MongoDBで使える演算子](#MongoDBで使える演算子)
 
 ## Insert Documents
 https://www.mongodb.com/docs/manual/tutorial/insert-documents/  
@@ -207,6 +207,14 @@ Syntax: { field: { $nin: [ <value1>, <value2> ... <valueN> ] } }
 ```
 //ShibaでもCorgiでもChihuahuaでもないもの、かつ年齢が１０歳未満
 > db.dogs.find({breed: {$nin:['Shiba', 'Corgi', 'Chihuahua']}, age:{$lt: 10})
+```
+Logical Query Operators  
+https://www.mongodb.com/docs/v6.2/reference/operator/query-logical/  
+or  
+{ $or: [ { <expression1> }, { <expression2> }, ... , { <expressionN> } ] }
+```
+//catFriendly:trueあるいは2歳未満
+db.dogs.find({$or: [{'personality.catFriendly':true}, {age: {$lte:2}}]})
 ```
 
 
